@@ -47,6 +47,7 @@ class LPsolver:
             vi=np.argmax(self.maxpos)
             max_pos_v=np.max(self.maxpos)
 
+
             if max_pos_v<=0:
                 break
             if vi<self.n:
