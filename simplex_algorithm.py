@@ -40,16 +40,27 @@ class LPsolver:
             for i in range(self.m):
                 self.maxpos[i+self.n]=0
                 for j in range(self.m):
-                    self.maxpos[i+self.n]=self.maxpos[i]-(self.S[j][i]*self.B[j])
+                    self.maxpos[i+self.n]=self.maxpos[i+self.n]-(self.S[j][i]*self.B[j])
                 print(self.maxpos[i+self.n])
             vm=np.array([0]*self.m,float)
+
             vi=np.argmax(self.maxpos)
             max_pos_v=np.max(self.maxpos)
+
             if max_pos_v<=0:
                 break
             if vi<self.n:
-                vm=self.c[vi]
-            #or i in range(self.m):
+                for i in range(self.m):
+                    vm[i]=self.c[i][vi]
+
+            print()
+            for i in range(self.m):
+                if vm[i]>0:
+                    self.minpos[i]=self.b[i]/vm[i]
+                else:
+                    self.minpos[i]=self.b[i]*float('inf')
+                print(self.minpos[i])
+
 
             flag=1
 
