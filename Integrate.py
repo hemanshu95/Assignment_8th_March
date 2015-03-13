@@ -40,7 +40,7 @@ class Integrate:
 				for i in range(2,n,2):
 					s2+=f(x_values[i])
 				s2*=2
-				s+=(f(x_values[0])+f(x_values[n])+s1+s2)
+				s=s+(f(x_values[0])+f(x_values[n])+s1+s2)
 				ans=((x_values[n]-x_values[0])*s)/(3*n)
 				return ans
 			return simpson_sol(f,x_values,n)
