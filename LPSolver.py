@@ -39,3 +39,32 @@ class LPsolver:
                         counter += 1
             if counter == len(b):
                 return "problem is unbounded"
+            z=[]
+            for i in minPos:
+                if i!="infinity" and i!="-infinity":
+                    if i>0:
+                        z += [i]
+            index2 = z.index(min(z))+1
+            counter = 0
+            for i in minPos:
+                if i!="infinity" and i!="-infinity":
+                    if i > 0:
+                        counter += 1
+                if counter == index2:
+                    index2 = minPos.index(i)
+                    break
+            B[index2] = a[index1]            
+            b[index2] = b[index2]/C[index2][index1]
+            run = C[index2][index1]
+            for i in range(len(a)):
+                C[index2][i] = C[index2][i]/run    
+            for i in range(len(b)):
+                if i != index2:
+                    num = C[i][index1]
+                    for j in range(len(a)):
+                        C[i][j] -= num*C[index2][j]
+                    b[i] -= num*b[index2]       
+        sum = 0
+        for i in range(len(b)):
+            sum += B[i]*b[i]
+        return sum
