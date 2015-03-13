@@ -34,7 +34,7 @@ class LPsolver:
 
     def solve(self,option, objective,constraints_value, constraints):
         self.init_the_table(objective,constraints_value,constraints)
-        #print(self.S,option)
+        
         flag=0
         final_sum=0
         while flag==0:
@@ -42,16 +42,14 @@ class LPsolver:
                 self.maxpos[i]=self.a[i]
                 for j in range(self.m):
                     self.maxpos[i]=self.maxpos[i]-(self.c[j][i]*self.B[j])
-                #print(self.maxpos[i])
+                
             for i in range(self.m):
                 self.maxpos[i+self.n]=0
                 for j in range(self.m):
                     self.maxpos[i+self.n]=self.maxpos[i+self.n]-(self.S[j][i]*self.B[j])
-                 #   print(self.S[j][i],self.B[j],end=' ')
-                #print()
-               # print(self.maxpos[i+self.n],)
+                 
             vm=np.array([0]*self.m,float)
-            #print()
+           
             vi=np.argmax(self.maxpos)
             max_pos_v=np.max(self.maxpos)
 
@@ -104,28 +102,28 @@ class LPsolver:
                         factor1=self.c[i][vi]
 
                         for j in range(self.n):
-                            #print(self.c[i][j],'(',factor1,self.c[mp_index][j],')',end=' ')
+                          
                             self.c[i][j]=self.c[i][j]-(factor1*self.c[mp_index][j])
                         for j in range(self.m):
-                            #print(self.S[i][j],'(',factor1,self.S[mp_index][j],')',end=' ')
+                            
                             self.S[i][j]=self.S[i][j]-(factor1*self.S[mp_index][j])
                         self.b[i]=self.b[i]-(factor1*self.b[mp_index])
-                        #print(self.b[i])
+                        
             else:
                 for i in range(self.m):
                     if i!=mp_index:
-                        #print(vi)
+                       
                         factor1=self.S[i][vi-self.n]
 
                         for j in range(self.n):
-                            #print(self.c[i][j],'(',factor1,self.c[mp_index][j],')',end=' ')
+                            
                             self.c[i][j]=self.c[i][j]-(factor1*self.c[mp_index][j])
 
                         for j in range(self.m):
-                            #print(self.S[i][j],'(',factor1,self.S[mp_index][j],')',end=' ')
+                           
                             self.S[i][j]=self.S[i][j]-(factor1*self.S[mp_index][j])
                         self.b[i]=self.b[i]-(factor1*self.b[mp_index])
-                        #print(self.b[i])
+               
 
             if vi<self.n:
                 self.B[mp_index]=self.a[vi]
@@ -142,6 +140,6 @@ class LPsolver:
                 final_sum=final_sum+(self.x[i]*self.a[i])
             print()
 sol=LPsolver()
-solution=sol.solve('hello',[3,2],[18,42,24],[[2,1],[2,3],[3,1]])
-#solution=sol.solve('hello',[1,3],[10,5,4],[[1,2],[1,0],[0,1]])
+
+solution=sol.solve('Simplex',[1,3],[10,5,4],[[1,2],[1,0],[0,1]])
 print(solution)
