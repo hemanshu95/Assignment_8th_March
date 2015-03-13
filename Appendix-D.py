@@ -29,6 +29,9 @@ class Interpolate:
             print(self.a[i],'x^',i,' + ',end='')
 sol=Interpolate()
 sol.solve([1,2,4],[1,0,2])
+##The second part of this was not understood by the author of the Appendix-D ,So the whole Appendix-D was done by some other author. 
+
+
 
 
 
