@@ -40,3 +40,23 @@ class PolynomialSolver:
 				print (l,u,f1,f2)
 				q-=1
 			return(l)
+		if(method=='secantRF'):
+			print("Enter lower bound of interval containing the root")
+			l=int(input())
+			print("Enter upper bound of interval containing the root")
+			u=int(input())
+			m=l
+			print("Enter maximum itertions")
+			q=int(input())
+			while(abs(self.F(n,L,m))>0.00001 and q>0):
+				f1=self.F(n,L,l)
+				f2=self.F(n,L,u)
+				m=u-(((u-l)*f2)/(f2-f1))
+				rp=self.F(n,L,m)
+				if(f1*rp<0):
+					u=m
+				else:
+					l=m
+				print (m)
+				q-=1
+			return(l)
