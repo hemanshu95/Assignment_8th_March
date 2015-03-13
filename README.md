@@ -3,10 +3,10 @@ ITWS-1 Assignment - 8th March for Group-3
 This assignment is done by serial numbers [1,6, 19, 25, 38] of BA-Section.
 
 Members of the Team:
-BA-1  : Abhiram R         : abhiramvvv
-BA-6  : Anandita          : Anandita29 
-BA-19 : Babloo Kumar      : bablookr
-BA-25 : Deepak Yadav      : cryptomanic
+BA-1  : Abhiram R         : abhiramvvv,
+BA-6  : Anandita          : Anandita29, 
+BA-19 : Babloo Kumar      : bablookr,
+BA-25 : Deepak Yadav      : cryptomanic,
 BA-38 : Hemanshu Sondhi   : hemanshu95 and hello12123434
 
 Appendix A- This question is done by two methods by two different authors under the filenames as simplex_algorithm.py and LPSolver.py.
