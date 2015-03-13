@@ -7,7 +7,7 @@ BA-1  : Abhiram Ravinadan : abhiramvvv
 BA-6  : Anadita Chaudhary : Anandita29 
 BA-19 : Babloo Kumar      : bablookr
 BA-25 : Deepak Yadav      : cryptomanic
-BA-38 : Hemanshu Sondhi   : hemanshu95
+BA-38 : Hemanshu Sondhi   : hemanshu95 and hello12123434
 
 Appendix A- This question is done by two methods by two different authors under the filenames as simplex_algorithm.py and LPSolver.py.
 
