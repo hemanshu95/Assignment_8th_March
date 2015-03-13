@@ -38,7 +38,7 @@ class LPsolver:
                     elif i <= 0:
                         counter += 1
             if counter == len(b):
-                return "problem is unbounded"
+                return " problem is unbounded "
             z=[]
             for i in minPos:
                 if i!="infinity" and i!="-infinity":
