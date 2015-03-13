@@ -60,3 +60,13 @@ class PolynomialSolver:
 				print (m)
 				q-=1
 			return(l)
+		if(method=='newtonraphson'):
+			print("Enter lower bound of interval containing the root")
+			l=int(input())
+			print("Enter maximum itertions")
+			q=int(input())
+			while(abs(self.F(n,L,l))>0.00001 and q>0):
+				l=l-self.F(n,L,l)/self.fd(n,L,l)
+			return(l)
+		else:
+			return NULL			
